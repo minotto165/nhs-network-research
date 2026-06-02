@@ -50,29 +50,6 @@
 			<key>ProhibitDisablement</key>
 			<false/>
 		</dict>
-		<dict>
-			<key>DNSSettings</key>
-			<dict>
-				<key>DNSProtocol</key>
-				<string>HTTPS</string>
-				<key>ServerURL</key>
-				<string>https://dns2.slowb.ro/dns-query</string>
-			</dict>
-			<key>PayloadDescription</key>
-			<string>Configures device to use OpenNIC(ns5.au.dns.opennic.glue) DNS over HTTPS</string>
-			<key>PayloadDisplayName</key>
-			<string>OpenNIC(ns5.au.dns.opennic.glue) DOH</string>
-			<key>PayloadIdentifier</key>
-			<string>com.apple.dnsSettings.managed.f577bb7a-c98c-4f0f-9672-db8e6fb11645</string>
-			<key>PayloadType</key>
-			<string>com.apple.dnsSettings.managed</string>
-			<key>PayloadUUID</key>
-			<string>F577BB7A-C98C-4F0F-9672-DB8E6FB11645</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>ProhibitDisablement</key>
-			<false/>
-		</dict>
 	</array>
 	<key>PayloadDisplayName</key>
 	<string>nhs-network-research DNS over HTTPS</string>
