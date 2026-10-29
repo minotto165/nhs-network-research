@@ -10,29 +10,6 @@
 				<key>DNSProtocol</key>
 				<string>HTTPS</string>
 				<key>ServerURL</key>
-				<string>https://renardbleu.dev/dns-query</string>
-			</dict>
-			<key>PayloadDescription</key>
-			<string>Configures device to use OpenNIC(ns1.mo.us.dns.opennic.glue) DNS over HTTPS</string>
-			<key>PayloadDisplayName</key>
-			<string>OpenNIC(ns1.mo.us.dns.opennic.glue) DOH</string>
-			<key>PayloadIdentifier</key>
-			<string>com.apple.dnsSettings.managed.f466e9e0-99d5-47fb-935f-44f8313db441</string>
-			<key>PayloadType</key>
-			<string>com.apple.dnsSettings.managed</string>
-			<key>PayloadUUID</key>
-			<string>F466E9E0-99D5-47FB-935F-44F8313DB441</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>ProhibitDisablement</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>DNSSettings</key>
-			<dict>
-				<key>DNSProtocol</key>
-				<string>HTTPS</string>
-				<key>ServerURL</key>
 				<string>https://dns1.slowb.ro/dns-query</string>
 			</dict>
 			<key>PayloadDescription</key>

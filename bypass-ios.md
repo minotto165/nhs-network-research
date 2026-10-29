@@ -14,10 +14,6 @@
 
 ## 2. DNS over HTTPSの有効化
 
-設定の`一般`→`VPNとデバイス管理`の`DNS`より、次のいずれかのDNSサーバーを選択して有効にする。
-
-- `OpenNIC(ns1.mo.us.dns.opennic.glue) DOH`
-- `OpenNIC(ns2.au.dns.opennic.glue) DOH`
-- `OpenNIC(ns5.au.dns.opennic.glue) DOH`
+設定の`一般`→`VPNとデバイス管理`の`DNS`より、`OpenNIC(ns2.au.dns.opennic.glue) DOH` を選択して有効にする。
 
 DoHを使うとわずかに通信が遅くなったり、不安定になることがあるため、フィルタリング回避が不要な時は`自動`に戻しておくことを推奨する。
