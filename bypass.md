@@ -50,14 +50,27 @@ DNS over HTTPSは、DNSの名前解決をHTTPS通信として行うプロトコ�
 サーバーによってはフィルタリングのブラックリストに載ってしまっていて、利用できないものがある。  
 例えば、Cloudflareの`https://1.1.1.1/dns-query`やGoogleの`https://dns.google/dns-query`などはフィルタリングされているため、利用できない。
 
-そこで、世界中のボランティアが運営しているDNSサーバープロジェクトであるOpenNICのDNSサーバーから、まだフィルタリングされていないDNSサーバーを選んで利用することにする。  
-DoHに対応しているOpenNICのDNSサーバーは多くないが、その中からフィルタリングされていない次の3つを見つけた。
+そこで、フィルタリングされていないボランティア系のDNSサーバーを選んで利用することにする。
 
-|名称|リゾルバURL|
-|-|-|
-|OpenNIC(ns1.mo.us.dns.opennic.glue)|<https://renardbleu.dev/dns-query>|
-|OpenNIC(ns2.au.dns.opennic.glue)|<https://dns1.slowb.ro/dns-query>|
-|OpenNIC(ns5.au.dns.opennic.glue)|<https://dns2.slowb.ro/dns-query>|
+## 推奨サーバー
+
+学内からの疎通と応答速度を確認したもの。いずれも学内フィルタのブロック対象外だが、将来リスト入りする可能性はある。
+
+| 名称 | リゾルバURL | 備考 |
+|-|-|-|
+| dnscry.pt Tokyo | <https://tyo02.dnscry.pt/dns-query> | 無フィルタ・無ログを明言。100か国以上にノードを持つボランティア系 |
+| dns4all (SIDN Labs) | <https://doh.dns4all.eu/dns-query> | .nl レジストリの実験サービス。無ログだが EU 制裁対象ドメインは遮断 |
+
+## フォールバック
+
+上記が使えなくなった場合の予備。OpenNIC のボランティアサーバー。
+
+| 名称 | リゾルバURL | 備考 |
+|-|-|-|
+| OpenNIC(ns2.au.dns.opennic.glue) | <https://dns1.slowb.ro/dns-query> | 生存確認済みだが応答は遅め |
+
+つながらなくなった場合は、サーバー側のメンテナンスや廃止で利用できなくなっている可能性がある。
+上記の別のサーバーに切り替えて試すこと。
 
 これらのDNSサーバーは、フィルタリングされていないため、DNS over HTTPSを利用することで、フィルタリングを回避できる。  
 これらのDNSサーバーは無料で提供されているため、メンテナンスや廃止などで利用できなくなる可能性があることに注意し、運営者には感謝の気持ちを持って利用することが重要である。

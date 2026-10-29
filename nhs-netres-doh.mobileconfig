@@ -10,18 +10,41 @@
 				<key>DNSProtocol</key>
 				<string>HTTPS</string>
 				<key>ServerURL</key>
-				<string>https://renardbleu.dev/dns-query</string>
+				<string>https://tyo02.dnscry.pt/dns-query</string>
 			</dict>
 			<key>PayloadDescription</key>
-			<string>Configures device to use OpenNIC(ns1.mo.us.dns.opennic.glue) DNS over HTTPS</string>
+			<string>Configures device to use dnscry.pt Tokyo DNS over HTTPS</string>
 			<key>PayloadDisplayName</key>
-			<string>OpenNIC(ns1.mo.us.dns.opennic.glue) DOH</string>
+			<string>dnscry.pt Tokyo DOH</string>
 			<key>PayloadIdentifier</key>
-			<string>com.apple.dnsSettings.managed.f466e9e0-99d5-47fb-935f-44f8313db441</string>
+			<string>com.apple.dnsSettings.managed.e8cb2e76-b895-4d27-9e6c-713bcd0cb92e</string>
 			<key>PayloadType</key>
 			<string>com.apple.dnsSettings.managed</string>
 			<key>PayloadUUID</key>
-			<string>F466E9E0-99D5-47FB-935F-44F8313DB441</string>
+			<string>E8CB2E76-B895-4D27-9E6C-713BCD0CB92E</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>ProhibitDisablement</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://doh.dns4all.eu/dns-query</string>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>Configures device to use dns4all DNS over HTTPS</string>
+			<key>PayloadDisplayName</key>
+			<string>dns4all DOH</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.dnsSettings.managed.9fa60b7a-4bcd-4cb5-9ed1-1fb7359c0b12</string>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadUUID</key>
+			<string>9FA60B7A-4BCD-4CB5-9ED1-1FB7359C0B12</string>
 			<key>PayloadVersion</key>
 			<integer>1</integer>
 			<key>ProhibitDisablement</key>
@@ -45,29 +68,6 @@
 			<string>com.apple.dnsSettings.managed</string>
 			<key>PayloadUUID</key>
 			<string>F5DF9C9B-0DBC-4753-9A61-C09E23FDB461</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-			<key>ProhibitDisablement</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>DNSSettings</key>
-			<dict>
-				<key>DNSProtocol</key>
-				<string>HTTPS</string>
-				<key>ServerURL</key>
-				<string>https://dns2.slowb.ro/dns-query</string>
-			</dict>
-			<key>PayloadDescription</key>
-			<string>Configures device to use OpenNIC(ns5.au.dns.opennic.glue) DNS over HTTPS</string>
-			<key>PayloadDisplayName</key>
-			<string>OpenNIC(ns5.au.dns.opennic.glue) DOH</string>
-			<key>PayloadIdentifier</key>
-			<string>com.apple.dnsSettings.managed.f577bb7a-c98c-4f0f-9672-db8e6fb11645</string>
-			<key>PayloadType</key>
-			<string>com.apple.dnsSettings.managed</string>
-			<key>PayloadUUID</key>
-			<string>F577BB7A-C98C-4F0F-9672-DB8E6FB11645</string>
 			<key>PayloadVersion</key>
 			<integer>1</integer>
 			<key>ProhibitDisablement</key>
