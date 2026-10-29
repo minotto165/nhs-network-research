@@ -12,6 +12,7 @@
 - [フィルタリングの仕組みと対策](./bypass.md)
 - [対策AndroidでのDoHを用いた対策](./bypass-android.md)
 - [対策iOSでのDoHを用いた対策](./bypass-ios.md)
+- [対策LinuxでのDoHを用いた対策](./bypass-linux.md)
 
 ## Log
 
