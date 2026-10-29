@@ -10,6 +10,52 @@
 				<key>DNSProtocol</key>
 				<string>HTTPS</string>
 				<key>ServerURL</key>
+				<string>https://tyo02.dnscry.pt/dns-query</string>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>Configures device to use dnscry.pt Tokyo DNS over HTTPS</string>
+			<key>PayloadDisplayName</key>
+			<string>dnscry.pt Tokyo DOH</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.dnsSettings.managed.e8cb2e76-b895-4d27-9e6c-713bcd0cb92e</string>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadUUID</key>
+			<string>E8CB2E76-B895-4D27-9E6C-713BCD0CB92E</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>ProhibitDisablement</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://doh.dns4all.eu/dns-query</string>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>Configures device to use dns4all DNS over HTTPS</string>
+			<key>PayloadDisplayName</key>
+			<string>dns4all DOH</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.dnsSettings.managed.9fa60b7a-4bcd-4cb5-9ed1-1fb7359c0b12</string>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadUUID</key>
+			<string>9FA60B7A-4BCD-4CB5-9ED1-1FB7359C0B12</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>ProhibitDisablement</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
 				<string>https://dns1.slowb.ro/dns-query</string>
 			</dict>
 			<key>PayloadDescription</key>

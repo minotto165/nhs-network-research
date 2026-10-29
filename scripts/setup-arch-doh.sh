@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # OS全体 DoH 化セットアップ (Arch Linux + NetworkManager 用)
-# 構成: アプリ -> 127.0.0.1:53 (dnscrypt-proxy) -> DoH(443) x3 (OpenNIC)
-#   - slowb-au2 : https://dns1.slowb.ro/dns-query (103.1.184.110, 動作確認済み)
-#   - slowb-au5 : https://dns2.slowb.ro/dns-query (168.138.12.137, 現在応答なし・予備)
-#   - renardbleu: https://renardbleu.dev/dns-query (203.88.117.153, 現在応答なし・予備)
+# 構成: アプリ -> 127.0.0.1:53 (dnscrypt-proxy) -> DoH(443) x3
+#   - dnscry-tokyo: https://tyo02.dnscry.pt/dns-query (103.179.45.6, 推奨)
+#   - dns4all     : https://doh.dns4all.eu/dns-query (194.0.5.3, 推奨)
+#   - slowb-au2   : https://dns1.slowb.ro/dns-query (103.1.184.110, フォールバック)
 # 3併用 + 常時DoH。lb はデフォルト wp2 (速いサーバを自動選択) のため、
 # 死んでいるサーバは自動で避けられ、復活すれば自動で使われる。
 set -euo pipefail
@@ -32,7 +32,7 @@ cat > /etc/dnscrypt-proxy/dnscrypt-proxy.toml <<'EOF'
 # OS全体DoH用 (nhs-network-research の3サーバ併用・常時DoH)
 # 平文DNSは校内でハイジャックされるため、スタンプにIP直書き (bootstrap不要)
 
-server_names = ['slowb-au2', 'slowb-au5', 'renardbleu']
+server_names = ['dnscry-tokyo', 'dns4all', 'slowb-au2']
 listen_addresses = ['127.0.0.1:53']
 max_clients = 250
 timeout = 10000
@@ -41,16 +41,16 @@ cache = true
 cache_size = 4096
 
 # campusでは UDP/53 が塞がれているため、疎通確認は DoH先の 443 で行う
-netprobe_address = '103.1.184.110:443'
+netprobe_address = '103.179.45.6:443'
+
+[static.'dnscry-tokyo']
+stamp = 'sdns://AgAAAAAAAAAADDEwMy4xNzkuNDUuNgAPdHlvMDIuZG5zY3J5LnB0Ci9kbnMtcXVlcnk'
+
+[static.dns4all]
+stamp = 'sdns://AgAAAAAAAAAACTE5NC4wLjUuMwAOZG9oLmRuczRhbGwuZXUKL2Rucy1xdWVyeQ'
 
 [static.'slowb-au2']
 stamp = 'sdns://AgAAAAAAAAAADTEwMy4xLjE4NC4xMTAADWRuczEuc2xvd2Iucm8KL2Rucy1xdWVyeQ'
-
-[static.'slowb-au5']
-stamp = 'sdns://AgAAAAAAAAAADjE2OC4xMzguMTIuMTM3AA1kbnMyLnNsb3diLnJvCi9kbnMtcXVlcnk'
-
-[static.renardbleu]
-stamp = 'sdns://AgAAAAAAAAAADjIwMy44OC4xMTcuMTUzAA5yZW5hcmRibGV1LmRldgovZG5zLXF1ZXJ5'
 EOF
 chmod 644 /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 

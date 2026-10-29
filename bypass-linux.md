@@ -29,18 +29,18 @@ sudo bash scripts/setup-arch-doh.sh
 スタンプは `sdns://` 形式で、IP 直書きのため学内の DNS フィルタリングの影響を受けない。
 
 ```toml
-server_names = ['slowb-au2', 'slowb-au5', 'renardbleu']
+server_names = ['dnscry-tokyo', 'dns4all', 'slowb-au2']
 listen_addresses = ['127.0.0.1:53']
 cache = true
 
+[static.'dnscry-tokyo']
+stamp = 'sdns://AgAAAAAAAAAADDEwMy4xNzkuNDUuNgAPdHlvMDIuZG5zY3J5LnB0Ci9kbnMtcXVlcnk'
+
+[static.dns4all]
+stamp = 'sdns://AgAAAAAAAAAACTE5NC4wLjUuMwAOZG9oLmRuczRhbGwuZXUKL2Rucy1xdWVyeQ'
+
 [static.'slowb-au2']
 stamp = 'sdns://AgAAAAAAAAAADTEwMy4xLjE4NC4xMTAADWRuczEuc2xvd2Iucm8KL2Rucy1xdWVyeQ'
-
-[static.'slowb-au5']
-stamp = 'sdns://AgAAAAAAAAAADjE2OC4xMzguMTIuMTM3AA1kbnMyLnNsb3diLnJvCi9kbnMtcXVlcnk'
-
-[static.renardbleu]
-stamp = 'sdns://AgAAAAAAAAAADjIwMy44OC4xMTcuMTUzAA5yZW5hcmRibGV1LmRldgovZG5zLXF1ZXJ5'
 ```
 
 自作スタンプを作る場合は addr と hostname の間に空 hashes (`0x00` 1バイト) が必要。
@@ -83,14 +83,14 @@ sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 ## 3. DNSサーバー
 
-[bypass.md](./bypass.md) の3サーバを併用する。
+[bypass.md](./bypass.md) の推奨2件にフォールバック1件を併用する。
 負荷分散が生存サーバを自動選択するため、死んでいるサーバを混ぜてもよい。
 
-| 名称 | リゾルバURL | 状態 (2026-10-29) |
+| 名称 | リゾルバURL | 位置づけ |
 |-|-|-|
-| OpenNIC(ns1.mo.us.dns.opennic.glue) | <https://renardbleu.dev/dns-query> | 応答なし (予備) |
-| OpenNIC(ns2.au.dns.opennic.glue) | <https://dns1.slowb.ro/dns-query> | 生存 |
-| OpenNIC(ns5.au.dns.opennic.glue) | <https://dns2.slowb.ro/dns-query> | 応答なし (予備) |
+| dnscry.pt Tokyo | <https://tyo02.dnscry.pt/dns-query> | 推奨 |
+| dns4all (SIDN Labs) | <https://doh.dns4all.eu/dns-query> | 推奨 |
+| OpenNIC(ns2.au.dns.opennic.glue) | <https://dns1.slowb.ro/dns-query> | フォールバック |
 
 ## 4. 検証
 

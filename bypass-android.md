@@ -17,11 +17,11 @@ RethinkDNSを起動し、`DNS`をタップして設定を開く。
 
 わかりやすいリゾルバ名をつけ、リゾルバURLを次のうちから選んで入力する。
 
-|名称|リゾルバURL|
-|-|-|
-|OpenNIC(ns1.mo.us.dns.opennic.glue)|<https://renardbleu.dev/dns-query>|
-|OpenNIC(ns2.au.dns.opennic.glue)|<https://dns1.slowb.ro/dns-query>|
-|OpenNIC(ns5.au.dns.opennic.glue)|<https://dns2.slowb.ro/dns-query>|
+|名称|リゾルバURL|位置づけ|
+|-|-|-|
+|dnscry.pt Tokyo|<https://tyo02.dnscry.pt/dns-query>|推奨|
+|dns4all (SIDN Labs)|<https://doh.dns4all.eu/dns-query>|推奨|
+|OpenNIC(ns2.au.dns.opennic.glue)|<https://dns1.slowb.ro/dns-query>|フォールバック|
 
 追加したDNSサーバーを選択して有効にする。
 
