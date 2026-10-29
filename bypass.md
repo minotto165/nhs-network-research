@@ -53,11 +53,13 @@ DNS over HTTPSは、DNSの名前解決をHTTPS通信として行うプロトコ�
 そこで、世界中のボランティアが運営しているDNSサーバープロジェクトであるOpenNICのDNSサーバーから、まだフィルタリングされていないDNSサーバーを選んで利用することにする。  
 DoHに対応しているOpenNICのDNSサーバーは多くないが、その中からフィルタリングされていない次の3つを見つけた。
 
-|名称|リゾルバURL|
-|-|-|
-|OpenNIC(ns1.mo.us.dns.opennic.glue)|<https://renardbleu.dev/dns-query>|
-|OpenNIC(ns2.au.dns.opennic.glue)|<https://dns1.slowb.ro/dns-query>|
-|OpenNIC(ns5.au.dns.opennic.glue)|<https://dns2.slowb.ro/dns-query>|
+|名称|リゾルバURL|状態 (2026-10-29 時点)|
+|-|-|-|
+|OpenNIC(ns1.mo.us.dns.opennic.glue)|<https://renardbleu.dev/dns-query>|応答なし|
+|OpenNIC(ns2.au.dns.opennic.glue)|<https://dns1.slowb.ro/dns-query>|生存|
+|OpenNIC(ns5.au.dns.opennic.glue)|<https://dns2.slowb.ro/dns-query>|応答なし|
+
+現在は `dns1.slowb.ro` のみ生存を確認している。応答のないサーバは復活する可能性があるため、設定には3件とも残しておくこと。
 
 これらのDNSサーバーは、フィルタリングされていないため、DNS over HTTPSを利用することで、フィルタリングを回避できる。  
 これらのDNSサーバーは無料で提供されているため、メンテナンスや廃止などで利用できなくなる可能性があることに注意し、運営者には感謝の気持ちを持って利用することが重要である。
