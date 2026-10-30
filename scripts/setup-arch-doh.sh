@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # OS全体 DoH 化セットアップ (Arch Linux + NetworkManager 用)
 # 構成: アプリ -> 127.0.0.1:53 (dnscrypt-proxy) -> DoH(443) x3
-#   - dnscry-tokyo: https://tyo02.dnscry.pt/dns-query (103.179.45.6, 推奨)
+#   - dnscry-tokyo: https://tyo03.dnscry.pt/dns-query (45.67.86.123, 推奨)
 #   - dns4all     : https://doh.dns4all.eu/dns-query (194.0.5.3, 推奨)
 #   - slowb-au2   : https://dns1.slowb.ro/dns-query (103.1.184.110, フォールバック)
 # 3併用 + 常時DoH。lb はデフォルト wp2 (速いサーバを自動選択) のため、
@@ -41,10 +41,10 @@ cache = true
 cache_size = 4096
 
 # campusでは UDP/53 が塞がれているため、疎通確認は DoH先の 443 で行う
-netprobe_address = '103.179.45.6:443'
+netprobe_address = '45.67.86.123:443'
 
 [static.'dnscry-tokyo']
-stamp = 'sdns://AgAAAAAAAAAADDEwMy4xNzkuNDUuNgAPdHlvMDIuZG5zY3J5LnB0Ci9kbnMtcXVlcnk'
+stamp = 'sdns://AgAAAAAAAAAADDQ1LjY3Ljg2LjEyMwAPdHlvMDMuZG5zY3J5LnB0Ci9kbnMtcXVlcnk'
 
 [static.dns4all]
 stamp = 'sdns://AgAAAAAAAAAACTE5NC4wLjUuMwAOZG9oLmRuczRhbGwuZXUKL2Rucy1xdWVyeQ'

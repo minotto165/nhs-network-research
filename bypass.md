@@ -59,7 +59,7 @@ Linux の手順では接続先 IP を直書きするため、ホスト名がブ�
 
 | 名称 | リゾルバURL | 備考 |
 |-|-|-|
-| dnscry.pt Tokyo | <https://tyo02.dnscry.pt/dns-query> | 無フィルタ・無ログを明言。100か国以上にノードを持つボランティア系 |
+| dnscry.pt Tokyo | <https://tyo03.dnscry.pt/dns-query> | 無フィルタ・無ログを明言。100か国以上にノードを持つボランティア系 |
 | dns4all (SIDN Labs) | <https://doh.dns4all.eu/dns-query> | .nl レジストリの実験サービス。無ログだが EU 制裁対象ドメインは遮断 |
 
 注意: IP を直書きできない環境 (iOS の構成プロファイル等) では、

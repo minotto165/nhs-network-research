@@ -34,7 +34,7 @@ listen_addresses = ['127.0.0.1:53']
 cache = true
 
 [static.'dnscry-tokyo']
-stamp = 'sdns://AgAAAAAAAAAADDEwMy4xNzkuNDUuNgAPdHlvMDIuZG5zY3J5LnB0Ci9kbnMtcXVlcnk'
+stamp = 'sdns://AgAAAAAAAAAADDQ1LjY3Ljg2LjEyMwAPdHlvMDMuZG5zY3J5LnB0Ci9kbnMtcXVlcnk'
 
 [static.dns4all]
 stamp = 'sdns://AgAAAAAAAAAACTE5NC4wLjUuMwAOZG9oLmRuczRhbGwuZXUKL2Rucy1xdWVyeQ'
@@ -88,7 +88,7 @@ sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 | 名称 | リゾルバURL | 位置づけ |
 |-|-|-|
-| dnscry.pt Tokyo | <https://tyo02.dnscry.pt/dns-query> | 推奨 |
+| dnscry.pt Tokyo | <https://tyo03.dnscry.pt/dns-query> | 推奨 |
 | dns4all (SIDN Labs) | <https://doh.dns4all.eu/dns-query> | 推奨 |
 | OpenNIC(ns2.au.dns.opennic.glue) | <https://dns1.slowb.ro/dns-query> | フォールバック |
 
