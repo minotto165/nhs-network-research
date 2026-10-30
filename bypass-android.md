@@ -19,7 +19,7 @@ RethinkDNSを起動し、`DNS`をタップして設定を開く。
 
 |名称|リゾルバURL|位置づけ|
 |-|-|-|
-|dnscry.pt Tokyo|<https://tyo02.dnscry.pt/dns-query>|推奨|
+|dnscry.pt Tokyo|<https://tyo03.dnscry.pt/dns-query>|推奨|
 |dns4all (SIDN Labs)|<https://doh.dns4all.eu/dns-query>|推奨|
 |OpenNIC(ns2.au.dns.opennic.glue)|<https://dns1.slowb.ro/dns-query>|フォールバック|
 

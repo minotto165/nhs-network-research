@@ -15,10 +15,9 @@
 ## 2. DNS over HTTPSの有効化
 
 設定の`一般`→`VPNとデバイス管理`の`DNS`より、次のいずれかのDNSサーバーを選択して有効にする。
-推奨は上2件、`OpenNIC` はフォールバック。
+推奨は上。
 
 - `dnscry.pt Tokyo DOH`
-- `dns4all DOH`
 - `OpenNIC(ns2.au.dns.opennic.glue) DOH`
 
 DoHを使うとわずかに通信が遅くなったり、不安定になることがあるため、フィルタリング回避が不要な時は`自動`に戻しておくことを推奨する。
