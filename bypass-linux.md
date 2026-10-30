@@ -95,9 +95,8 @@ sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ## 4. 検証
 
 ```sh
-dig one.one.one.one +short       # 1.1.1.1 が返ること (146.112.61.106 は毒)
+dig one.one.one.one +short       # 1.1.1.1 が返ること (146.112.61.106 はフィルタ)
 curl -s -o /dev/null -w "%{http_code}\n" https://proton.me   # 200 が返ること
 ```
 
-学内 Wi-Fi で検証済み (2026-10-29)。ping はフィルタの仕様で通らないが、TCP 80/443 には支障ない。
 戻すときはバックアップ (`/root/doh-backup-*`) から復旧する。手順はスクリプト末尾に記載。

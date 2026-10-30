@@ -25,10 +25,6 @@ RethinkDNSを起動し、`DNS`をタップして設定を開く。
 
 追加したDNSサーバーを選択して有効にする。
 
-注意: RethinkDNS は DoH サーバーのホスト名を通常の DNS で解決する。
-ホスト名自体が学内フィルタのブロック対象 (`tyo02.dnscry.pt`、`doh.dns4all.eu` 等) のサーバーは使えない場合がある。
-その場合は `dns1.slowb.ro` を選ぶこと。
-
 ## 3. DNS over HTTPSの有効化
 
 RethinkDNSのトップ画面に戻り、下部の`開始`をタップしてRethinkDNSを有効にする。

@@ -414,3 +414,47 @@ one.one.one.one.        37761   IN      A       1.1.1.1
 ```
 
 adawayでopennicの名前解決のみを行うことでも成功した。
+
+## RethinkDNS での DoH ホスト名解決 (2026-10-30 追記)
+
+Android の RethinkDNS に `https://tyo03.dnscry.pt/dns-query` を直接指定したところ疎通した。
+学内 DNS では `tyo02.dnscry.pt`、`doh.dns4all.eu` 等の DoH 用ホスト名がフィルタ用 IP (`146.112.61.106` 等) にすり替えられているが、
+RethinkDNS は DoH サーバーのホスト名を独自に解決するため、学内 DNS のすり替えの影響を受けにくいと見られる。
+一方 iOS の構成プロファイルはホスト名を学内 DNS で解決するため、すり替え対象ホスト名のサーバーは使えない。
+
+## Linux での OS 全体 DoH (2026-10-29 検証)
+
+Arch Linux + NetworkManager + systemd-resolved で OS 全体に DoH を適用した。
+systemd-resolved は DoH 未対応のため `dnscrypt-proxy` を localhost フォワーダにし、
+`server_names` に dnscry.pt Tokyo・dns4all・dns1.slowb.ro の3件を併用した。
+
+学内 Wi-Fi での検証結果:
+
+```sh
+$ dig one.one.one.one +short
+1.1.1.1
+1.0.0.1
+$ curl -s -o /dev/null -w "%{http_code}\n" https://proton.me
+200
+$ resolvectl status  # Global DNS=127.0.0.1、Link 側 DNS なしを確認
+```
+
+`proton.me`、`example.com` ともに `200`。従来ブロックされていた Web チャットも疎通した。
+ping は従来通り 100% loss のままだが、これはフィルタの仕様であり DNS とは無関係。
+
+## DoH 用ホスト名のブロックと iOS 実機検証 (2026-10-30 追記)
+
+学内 DNS (210.130.0.3 / 210.130.1.3) に DoH サーバーのホスト名を直接問い合わせたところ、
+多くがフィルタ用 IP (`146.112.61.106` 等) にすり替えられていた。すり替えられていた主なホスト名:
+
+- tyo02.dnscry.pt、doh.dns4all.eu、doh-de.blahdns.com、freedns.controld.com
+- sky.rethinkdns.com、dns.aa.net.uk、doh.bortzmeyer.fr、dns.artikel10.org
+- dns.comss.one、dns.cloudflare.com、cloudflare-dns.com
+
+すり替えられていなかったホスト名:
+
+- dns1.slowb.ro、tyo03.dnscry.pt、unfiltered.joindns4.eu ほか dnscry.pt の CNAME 系多数
+
+iOS の構成プロファイルは DoH サーバーのホスト名を学内 DNS で解決するため (IP 直書き不可)、
+ホスト名をすり替えられるサーバーは iPad で使えなかった (`tyo02`、`dns4all` で `proton.me` に到達不可)。
+`tyo03.dnscry.pt` 単体のテストプロファイルでは iPad 実機で `proton.me` に到達できた。

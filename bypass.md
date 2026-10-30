@@ -62,9 +62,8 @@ Linux の手順では接続先 IP を直書きするため、ホスト名がブ�
 | dnscry.pt Tokyo | <https://tyo02.dnscry.pt/dns-query> | 無フィルタ・無ログを明言。100か国以上にノードを持つボランティア系 |
 | dns4all (SIDN Labs) | <https://doh.dns4all.eu/dns-query> | .nl レジストリの実験サービス。無ログだが EU 制裁対象ドメインは遮断 |
 
-注意: iOS の構成プロファイルや通常の DoH 設定は、DoH サーバーのホスト名を学内 DNS で解決する。
-ホスト名自体がフィルタのブロック対象のサーバーは、IP を直書きできない環境 (iOS 等) では使えない。
-iOS 実機で動作確認済みなのは `tyo03.dnscry.pt` と `dns1.slowb.ro` (`doh.dns4all.eu` と `tyo02.dnscry.pt` はホスト名がブロック対象)。
+注意: IP を直書きできない環境 (iOS の構成プロファイル等) では、
+ホスト名自体がフィルタのブロック対象のサーバーは使えない。詳細は[調査記録](./research-log.md)参照。
 
 ## フォールバック
 
